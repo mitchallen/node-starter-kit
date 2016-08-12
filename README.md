@@ -33,6 +33,10 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 ## Version History
 
+#### Version 0.1.3
+
+* for consistency all replacement vars now user underscores instead of hyphens
+
 #### Version 0.1.2
 
 * fixed issue in README.template

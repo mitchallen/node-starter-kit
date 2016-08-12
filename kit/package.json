@@ -1,5 +1,5 @@
 {
-  "name": "@NPM-SCOPE/PACKAGE-NAME",
+  "name": "@NPM_SCOPE/PACKAGE_NAME",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
@@ -15,11 +15,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/BITBUCKET_USER/PACKAGE-NAME.git"
+    "url": "https://bitbucket.org/BITBUCKET_USER/PACKAGE_NAME.git"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/GITHUB_USER/PACKAGE-NAME.git"
+    "url": "https://github.com/GITHUB_USER/PACKAGE_NAME.git"
   },
   "author": "NPM_AUTHOR",
   "license": "ISC",

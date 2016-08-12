@@ -1,5 +1,5 @@
 
-@$NPM-SCOPE/PACKAGE-NAME
+@$NPM_SCOPE/PACKAGE_NAME
 ==
 PUT DESCRIPTION HERE
 --
@@ -9,7 +9,7 @@ PUT DESCRIPTION HERE
 You must use __npm__ __2.7.0__ or higher because of the scoped package name.
 
     $ npm init
-    $ npm install @NPM_SCOPE/PACKAGE-NAME --save
+    $ npm install @NPM_SCOPE/PACKAGE_NAME --save
   
 * * *
 
@@ -25,8 +25,8 @@ To test, go to the root folder and type (sans __$__):
  
 ## Repo(s)
 
-* [bitbucket.org/BITBUCKET_USER/PACKAGE-NAME.git](https://bitbucket.org/BITBUCKET_USER/PACKAGE-NAMEgit)
-* [github.com/GITHUB_USER/PACKAGE-NAME.git](https://github.com/GITHUB_USER/PACKAGE-NAME.git)
+* [bitbucket.org/BITBUCKET_USER/PACKAGE_NAME.git](https://bitbucket.org/BITBUCKET_USER/PACKAGE_NAMEgit)
+* [github.com/GITHUB_USER/PACKAGE_NAME.git](https://github.com/GITHUB_USER/PACKAGE_NAME.git)
 
 * * *
 
