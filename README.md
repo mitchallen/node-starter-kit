@@ -6,15 +6,24 @@ node starter kit files used by a node-starter script.
 ## Usage
 
 This kit is not meant to be used directly. Instead, it is cloned by a script that will use it to initialize __NodeJS__ projects. 
+
+The script that uses this kit can be found here: 
+
+* [https://bitbucket.org/snippets/mitchallen/jxdz4](https://bitbucket.org/snippets/mitchallen/jxdz4)
    
 * * *
 
 ## Kit Files
 
-* __kit/README.template__
-* __kit/package.json__
-* __kit/npmignore.txt__ - when copied convert to __.npmignore__
-* __kit/Gruntfile.js__
+### Template Files
+
+* __kit/README.template__ - the starter script will copy this file as __README.md__ to the root of the new project and use __sed__ to replace inplace special vars in the the new file
+* __kit/package.json__ - the starter script will copy this file to the root of the new project and use __sed__ to replace inplace special strings in the new file
+
+### Copied Files
+
+* __kit/npmignore.txt__ - the starter script will copy this file to the root of the project as to __.npmignore__ . The file will be hidden. To see it use __ls -la__ at the command line
+* __kit/Gruntfile.js__ - the starter script will copy this file to the root of the new project without modification
 
 * * *
  
