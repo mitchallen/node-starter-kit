@@ -31,8 +31,8 @@ The script that uses this kit can be found here:
  
 ## Repo(s)
 
-* [bitbucket.org/mitchallen/node-starter-kit.git](bitbucket.org/mitchallen/node-starter-kit.git)
-* [github.com/mitchallen/node-starter-kit.git](github.com/mitchallen/node-starter-kit.git)
+* [bitbucket.org/mitchallen/node-starter-kit.git](https://bitbucket.org/mitchallen/node-starter-kit.git)
+* [github.com/mitchallen/node-starter-kit.git](https://github.com/mitchallen/node-starter-kit.git)
 
 * * *
 
