@@ -19,6 +19,8 @@ The script that uses this kit can be found here:
 
 * __kit/README.template__ - the starter script will copy this file as __README.md__ to the root of the new project and use __sed__ to replace inplace special vars in the the new file
 * __kit/package.json__ - the starter script will copy this file to the root of the new project and use __sed__ to replace inplace special strings in the new file
+* __kit/index.js__ - the starter script will copy this file to the root of the new project and use __sed__ to replace inplace special strings in the new file 
+* __kit/smoke-test.js__ - the starter script will copy this file to the __test__ folder of the new project and use __sed__ to replace inplace special strings in the new file
 
 ### Copied Files
 
@@ -41,6 +43,10 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * * *
 
 ## Version History
+
+#### Version 0.1.6
+
+* Added templates index.js and smoke-test.js to kit
 
 #### Version 0.1.5
 
