@@ -50,7 +50,7 @@ describe('module factory smoke test', function() {
     it('health method should return ok', function(done) {
         var obj = _module.create({});
         should.exist(obj);
-        obj.health.should.eql("OK");
+        obj.health().should.eql("OK");
         done();
     });
 });
