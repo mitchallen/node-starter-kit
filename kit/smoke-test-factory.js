@@ -42,8 +42,15 @@ describe('module factory smoke test', function() {
     })
 
     it('create method with no spec should return null', function(done) {
-        var grid = _module.create();
-        should.not.exist(grid);
+        var obj = _module.create();
+        should.not.exist(obj);
+        done();
+    });
+
+    it('health method should return ok', function(done) {
+        var obj = _module.create({});
+        should.exist(obj);
+        obj.health.should.eql("OK");
         done();
     });
 });
