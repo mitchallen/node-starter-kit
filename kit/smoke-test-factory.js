@@ -8,9 +8,9 @@
 
 var request = require('supertest'),
     should = require('should'),
-    modulePath = "../index";
+    modulePath = "../index-factory";
 
-describe('module smoke test', function() {
+describe('module factory smoke test', function() {
 
     var _module = null;
 

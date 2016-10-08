@@ -12,10 +12,10 @@ module.exports.create = function (spec) {
         return null;
     }
     // private 
-    let _package = @NPM_SCOPE/PACKAGE_NAME
+    let _package = "@NPM_SCOPE/PACKAGE_NAME"
     return {
         health: function() {
             console.log( _package, " OK ", new Date());
         }
-    }
+    };
 };
