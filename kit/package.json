@@ -24,6 +24,9 @@
   "author": "NPM_AUTHOR",
   "license": "ISC",
   "devDependencies": {
+    "@mitchallen/factory-base": "0.1.0",
+  },
+  "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-bump": "^0.8.0",
     "grunt-contrib-jshint": "^1.0.0",
