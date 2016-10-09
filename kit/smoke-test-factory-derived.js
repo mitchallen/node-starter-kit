@@ -1,6 +1,6 @@
 /**
     Module: @NPM_SCOPE/PACKAGE_NAME
-      Test: smoke-test-factory
+      Test: smoke-test-factory-derived
     Author: AUTHOR_NAME
 */
 
@@ -8,7 +8,7 @@
 
 var request = require('supertest'),
     should = require('should'),
-    modulePath = "../index-factory";
+    modulePath = "../index-factory-derived";
 
 describe('module factory smoke test', function() {
 

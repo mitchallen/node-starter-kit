@@ -7,13 +7,19 @@
 
 "use strict";
 
+var parentFactory = require(PARENT_PACKAGE);
+
 module.exports.create = function (spec) {
     if(!spec) {
         return null;
     }
     // private 
     let _package = "@NPM_SCOPE/PACKAGE_NAME";
-    return {
+    var _parent = parentFactory.create(spec);
+    if(!_parent) {
+        return null;
+    }
+    return Object.assign( _parent, {
         // public 
         package: function() {
             return _package;
@@ -21,5 +27,5 @@ module.exports.create = function (spec) {
         health: function() {
             return "OK";
         }
-    };
+    });
 };
