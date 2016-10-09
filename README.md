@@ -21,8 +21,10 @@ The script that uses this kit can be found here:
 * __kit/package.json__ - the starter script will copy this file to the root of the new project and use __sed__ to replace inplace special strings in the new file
 * __kit/index.js__ - the starter script will copy this file to the root of the new project and use __sed__ to replace inplace special strings in the new file 
 * __kit/index-factory.js__ - example for using a factory
+* __kit/index-factory-derived.js__ - example for using a factory derived from another factory
 * __kit/smoke-test.js__ - the starter script will copy this file to the __test__ folder of the new project and use __sed__ to replace inplace special strings in the new file
 * __kit/smoke-test-factory.js__ - example for using a factory
+* __kit/smoke-test-factory-derived.js__ - example for using a factory derived from another factory
 
 ### Copied Files
 
@@ -46,6 +48,10 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 * * *
 
 ## Version History
+
+#### Version 0.1.8
+
+* Added templates index-factory-derived.js and smoke-test-factory-derived.js to kit
 
 #### Version 0.1.7
 
