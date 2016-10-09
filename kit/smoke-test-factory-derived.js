@@ -48,7 +48,7 @@ describe('module factory smoke test', function() {
     });
 
     it('create method with spec should return object', function(done) {
-        var obj = _factory.create();
+        var obj = _factory.create({});
         should.exist(obj);
         done();
     });

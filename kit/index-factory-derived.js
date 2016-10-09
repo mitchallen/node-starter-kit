@@ -7,7 +7,7 @@
 
 "use strict";
 
-var parentFactory = require(PARENT_PACKAGE);
+var parentFactory = require("PARENT_PACKAGE");
 
 module.exports.create = function (spec) {
     if(!spec) {
