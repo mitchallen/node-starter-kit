@@ -23,7 +23,7 @@
   },
   "author": "NPM_AUTHOR",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "@mitchallen/factory-base": "0.1.0"
   },
   "devDependencies": {
