@@ -7,7 +7,7 @@
 
 "use strict";
 
-module.exports.create = function (spec) {
+module.exports.create = (spec) => {
     if(!spec) {
         return null;
     }
@@ -15,11 +15,7 @@ module.exports.create = function (spec) {
     let _package = "@NPM_SCOPE/PACKAGE_NAME";
     return {
         // public 
-        package: function() {
-            return _package;
-        },
-        health: function() {
-            return "OK";
-        }
+        package: () => _package,
+        health: () => "OK"
     };
 };
