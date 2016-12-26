@@ -49,6 +49,10 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 ## Version History
 
+#### Version 0.1.10
+
+* Removed __dist__ from .npmignre
+
 #### Version 0.1.9
 
 * Updated factory index-factory.js and smoke-test-factory.js to use arrow operator
