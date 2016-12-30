@@ -25,7 +25,12 @@ module.exports = function (grunt) {
                 command: 'npm publish'
             },
             pubinit: {
-                command: 'npm publish --access public'
+                // command: 'npm publish --access public'
+                command: [
+                    'npm publish --access public',
+                    'git tag v0.1.0',
+                    'git push origin --tags',
+                  ].join('&&')
             },
             genreadme: {
                 // command: 'markedpp template/WRAPPER.md >README.md'
@@ -63,6 +68,8 @@ module.exports = function (grunt) {
                    // we change the name of the source file accordingly.
                    // The result file's extension is always .js
                    "./dist/PACKAGE_NAME.js": ["./modules/index.js"]
+                   // For non-standalone, use ./browser.js instead.
+                   // "./dist/PACKAGE_NAME.js": ["./browser.js"]
                 }
             }
         },
