@@ -28,7 +28,8 @@ module.exports = function (grunt) {
                 command: 'npm publish --access public'
             },
             genreadme: {
-                // command: 'markedpp template/WRAPPER.md >README.md '
+                // command: 'markedpp template/WRAPPER.md >README.md'
+                command: 'echo .'
             }
         },
 
