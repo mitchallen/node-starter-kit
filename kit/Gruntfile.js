@@ -66,6 +66,42 @@ module.exports = function (grunt) {
             }
         },
 
+        uglify: {
+            my_target: {
+                files: {
+                    './dist/PACKAGE_NAME.min.js': ['./dist/PACKAGE_NAME.js']
+                }
+            }
+        },
+
+        watch: {
+             scripts: {
+                files: ["./modules/*.js"],
+                tasks: ["browserify",'uglify']
+             }
+        },
+
+        jsdoc2md: {
+              oneOutputFile: {
+                src: 'modules/*.js',
+                // dest: 'template/DOC-API.md'
+                dest: 'DOC-API.md'
+              }
+              // separateOutputFilePerInput: {
+              //   files: [
+              //     { src: 'src/jacket.js', dest: 'api/jacket.md' },
+              //     { src: 'src/shirt.js', dest: 'api/shirt.md' }
+              //   ]
+              // },
+              // withOptions: {
+              //   options: {
+              //     'no-gfm': true
+              //   },
+              //   src: 'src/wardrobe.js',
+              //   dest: 'api/with-index.md'
+              // }
+        }
+
     });
 
     grunt.registerTask('default', ['build']);
