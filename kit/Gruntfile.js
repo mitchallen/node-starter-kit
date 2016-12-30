@@ -32,10 +32,6 @@ module.exports = function (grunt) {
                     'git push origin --tags',
                   ].join('&&')
             },
-            genreadme: {
-                // command: 'markedpp template/WRAPPER.md >README.md'
-                command: 'echo .'
-            }
         },
 
         // To test: grunt bump --dry-run
@@ -95,7 +91,6 @@ module.exports = function (grunt) {
         jsdoc2md: {
               oneOutputFile: {
                 src: 'modules/*.js',
-                // dest: 'template/DOC-API.md'
                 dest: 'DOC-API.md'
               }
               // separateOutputFilePerInput: {
@@ -117,7 +112,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', ['build']);
     grunt.registerTask('monitor', ['jshint','watch']);
-    grunt.registerTask('build-doc', ['jsdoc2md','shell:genreadme']);
+    grunt.registerTask('build-doc', ['jsdoc2md']);
     grunt.registerTask("build", ['jshint','build-doc','browserify','uglify']);
     grunt.registerTask('pubinit', ['build','shell:pubinit']);
     grunt.registerTask('publish', ['build','bump','shell:publish']);
