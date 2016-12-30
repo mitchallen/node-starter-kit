@@ -1,6 +1,6 @@
 /**
     Module: @NPM_SCOPE/PACKAGE_NAME
-      Test: smoke-test-factory
+      Test: smoke-test
     Author: AUTHOR_NAME
 */
 
