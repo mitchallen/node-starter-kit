@@ -8,7 +8,7 @@
 
 var request = require('supertest'),
     should = require('should'),
-    modulePath = "../index-factory";
+    modulePath = "../dist/PACKAGE_NAME";
 
 describe('module factory smoke test', () => {
 
