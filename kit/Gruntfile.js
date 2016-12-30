@@ -3,6 +3,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-bump');
     grunt.loadNpmTasks('grunt-shell');
+    grunt.loadNpmTasks("grunt-browserify");
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks("grunt-contrib-watch");
+    grunt.loadNpmTasks('grunt-jsdoc-to-markdown');
 
     grunt.initConfig({
 
@@ -20,9 +24,11 @@ module.exports = function (grunt) {
             publish: {
                 command: 'npm publish'
             },
-
             pubinit: {
                 command: 'npm publish --access public'
+            },
+            genreadme: {
+                // command: 'markedpp template/WRAPPER.md >README.md '
             }
         },
 
@@ -41,9 +47,31 @@ module.exports = function (grunt) {
             }
         },
 
+
+        browserify: {
+            dist: {
+                options: {
+                    browserifyOptions: {
+                        standalone: 'NPM_SCOPE.PACKAGE_NAME'
+                    },
+                    transform: [['babelify', {presets: ['es2015']}]],
+                    plugin: [[ "browserify-derequire" ]]
+                },
+                files: {
+                   // if the source file has an extension of es6 then
+                   // we change the name of the source file accordingly.
+                   // The result file's extension is always .js
+                   "./dist/PACKAGE_NAME.js": ["./modules/index.js"]
+                }
+            }
+        },
+
     });
 
-    grunt.registerTask('default', ['jshint']);
-    grunt.registerTask('pubinit', ['jshint','shell:pubinit']);
-    grunt.registerTask('publish', ['jshint','bump','shell:publish']);
+    grunt.registerTask('default', ['build']);
+    grunt.registerTask('monitor', ['jshint','watch']);
+    grunt.registerTask('build-doc', ['jsdoc2md','shell:genreadme']);
+    grunt.registerTask("build", ['jshint','build-doc','browserify','uglify']);
+    grunt.registerTask('pubinit', ['build','shell:pubinit']);
+    grunt.registerTask('publish', ['build','bump','shell:publish']);
 };
