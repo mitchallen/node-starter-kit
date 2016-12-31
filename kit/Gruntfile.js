@@ -56,7 +56,7 @@ module.exports = function (grunt) {
                     browserifyOptions: {
                         // dashes will be converted to caps in actual name 
                         // i.e.: -test-zeta becomes TestZeta
-                        standalone: 'MitchAllen.-PACKAGE_NAME'
+                        standalone: 'BROWSER_NAMESPACE.-PACKAGE_NAME'
                         // standalone: 'NPM_SCOPE.-PACKAGE_NAME'
                     },
                     transform: [['babelify', {presets: ['es2015']}]],
