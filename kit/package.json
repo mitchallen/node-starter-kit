@@ -21,6 +21,10 @@
     "type": "git",
     "url": "https://github.com/GITHUB_USER/PACKAGE_NAME.git"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/GITLAB_USER/PACKAGE_NAME.git"
+  },
   "author": "NPM_AUTHOR",
   "license": "ISC",
   "dependencies": {

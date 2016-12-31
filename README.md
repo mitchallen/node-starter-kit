@@ -156,6 +156,7 @@ Any variable that starts with a __$__ must be supplied by the script or the envi
 	  sed -i .bak "s/PACKAGE_NAME/$packageName/g" package.json
 	  sed -i .bak "s/BITBUCKET_USER/$BITBUCKET_USER/g" package.json
 	  sed -i .bak "s/GITHUB_USER/$GITHUB_USER/g" package.json
+	  sed -i .bak "s/GITLAB_USER/$GITLAB_USER/g" package.json
 	  sed -i .bak "s/NPM_AUTHOR/$npmAuthor/g" package.json
 
 	  cat package.json
@@ -181,6 +182,7 @@ Any variable that starts with a __$__ must be supplied by the script or the envi
 	  sed -i .bak "s/PACKAGE_NAME/$packageName/g" README.md
 	  sed -i .bak "s/BITBUCKET_USER/$BITBUCKET_USER/g" README.md
 	  sed -i .bak "s/GITHUB_USER/$GITHUB_USER/g" README.md
+	  sed -i .bak "s/GITLAB_USER/$GITLAB_USER/g" README.md
 	  sed -i .bak "s/NPM_AUTHOR/$npmAuthor/g" README.md
 
 	  cat README.md
