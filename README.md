@@ -211,7 +211,7 @@ These files were moved out of the kit:
 * __old/index-factory-derived.js__ - example for using a factory derived from another factory
 * __old/index.js__ - original root
 * __old/smoke-test-factory-derived.js__ - example for using a factory derived from another factory
-* __kit/smoke-test.js__ - original smoke test
+* __old/smoke-test.js__ - original smoke test
  
 
 * * *
