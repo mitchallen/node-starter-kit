@@ -6,9 +6,8 @@
   "scripts": {
     "//": "To use: npm start (useful if not a module)",
     "start": "node dist/PACKAGE_NAME.js",
-    "//": "To use: npm test (assumes mocha installed globally)",
     "test": "grunt && /usr/local/bin/mocha --recursive --timeout 20000",
-    "//": "To use: npm run test-nodemon (assumes global location of mocha)",
+    "test-coverage": "./node_modules/.bin/istanbul cover _mocha -- -R spec test/**/*",
     "test-nodemon": "nodemon /usr/local/bin/mocha --timeout 5000",
     "test-debug": "nodemon /usr/local/bin/mocha -g '@DEBUG' --recursive --timeout 20000",
     "test-jenkins": "grunt && /usr/local/bin/mocha --recursive --timeout 20000 -R xunit test/ > test-reports.xml",
@@ -22,12 +21,8 @@
     "type": "git",
     "url": "https://github.com/GITHUB_USER/PACKAGE_NAME.git"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://gitlab.com/GITLAB_USER/PACKAGE_NAME.git"
-  },
   "author": "NPM_AUTHOR",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
   },
   "devDependencies": {
@@ -42,6 +37,8 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-jsdoc-to-markdown": "^2.0.0",
     "grunt-shell": "^1.3.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
     "should": "^10.0.0",
     "supertest": "^2.0.0"
   }
