@@ -1,5 +1,5 @@
 /**
-    Module: @NPM_SCOPE/PACKAGE_NAME
+    Module: FULL_PKG_NAME
       Test: smoke-test
     Author: AUTHOR_NAME
 */

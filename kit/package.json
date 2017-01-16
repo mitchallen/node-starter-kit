@@ -1,5 +1,5 @@
 {
-  "name": "@NPM_SCOPE/PACKAGE_NAME",
+  "name": "FULL_PKG_NAME",
   "version": "0.1.0",
   "description": "",
   "main": "dist/PACKAGE_NAME.js",

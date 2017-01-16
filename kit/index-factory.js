@@ -1,5 +1,5 @@
 /**
-    Module: @NPM_SCOPE/PACKAGE_NAME
+    Module: FULL_PKG_NAME
     Author: AUTHOR_NAME
 */
 
@@ -25,7 +25,7 @@
  * @param {Object} options Named parameters object
  * @returns {module:PACKAGE_NAME}
  * @example <caption>Usage example</caption>
- * var factory = require("@NPM_SCOPE/PACKAGE_NAME");
+ * var factory = require("FULL_PKG_NAME");
  * var obj = factory.create({});
  */
 module.exports.create = (spec) => {
@@ -33,7 +33,7 @@ module.exports.create = (spec) => {
         return null;
     }
     // private 
-    let _package = "@NPM_SCOPE/PACKAGE_NAME";
+    let _package = "FULL_PKG_NAME";
     return {
         // public
         /** Returns the package name

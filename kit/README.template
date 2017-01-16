@@ -1,30 +1,30 @@
-@NPM_SCOPE/PACKAGE_NAME
+FULL_PKG_NAME
 ==
 PUT DESCRIPTION HERE
 --
 
 <p align="left">
-  <a href="https://travis-ci.org/mitchallen/PACKAGE_NAME">
-    <img src="https://img.shields.io/travis/mitchallen/PACKAGE_NAME.svg?style=flat-square" alt="Continuous Integration">
+  <a href="https://travis-ci.org/TRAVIS_ACCT/PACKAGE_NAME">
+    <img src="https://img.shields.io/travis/TRAVIS_ACCT/PACKAGE_NAME.svg?style=flat-square" alt="Continuous Integration">
   </a>
-  <a href="https://codecov.io/gh/mitchallen/PACKAGE_NAME">
-    <img src="https://codecov.io/gh/mitchallen/PACKAGE_NAME/branch/master/graph/badge.svg" alt="Coverage Status">
+  <a href="https://codecov.io/gh/CODECOV_ACCT/PACKAGE_NAME">
+    <img src="https://codecov.io/gh/CODECOV_ACCT/PACKAGE_NAME/branch/master/graph/badge.svg" alt="Coverage Status">
   </a>
-  <a href="https://npmjs.org/package/@NPM_SCOPE/PACKAGE_NAME">
-    <img src="http://img.shields.io/npm/dt/@NPM_SCOPE/PACKAGE_NAME/.svg?style=flat-square" alt="Downloads">
+  <a href="https://npmjs.org/package/FULL_PKG_NAME">
+    <img src="http://img.shields.io/npm/dt/FULL_PKG_NAME/.svg?style=flat-square" alt="Downloads">
   </a>
-  <a href="https://npmjs.org/package/@NPM_SCOPE/PACKAGE_NAME">
-    <img src="http://img.shields.io/npm/v/@NPM_SCOPE/PACKAGE_NAME.svg?style=flat-square" alt="Version">
+  <a href="https://npmjs.org/package/FULL_PKG_NAME">
+    <img src="http://img.shields.io/npm/v/FULL_PKG_NAME.svg?style=flat-square" alt="Version">
   </a>
-  <a href="https://npmjs.com/package/@NPM_SCOPE/PACKAGE_NAME">
-    <img src="https://img.shields.io/github/license/mitchallen/PACKAGE_NAME.svg" alt="License"></a>
+  <a href="https://npmjs.com/package/FULL_PKG_NAME">
+    <img src="https://img.shields.io/github/license/GITHUB_USER/PACKAGE_NAME.svg" alt="License"></a>
   </a>
 </p>
 
 ## Installation
 
     $ npm init
-    $ npm install @NPM_SCOPE/PACKAGE_NAME --save
+    $ npm install FULL_PKG_NAME --save
   
 * * *
 
