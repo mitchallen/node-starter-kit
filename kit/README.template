@@ -3,9 +3,25 @@
 PUT DESCRIPTION HERE
 --
 
-## Installation
+<p align="left">
+  <a href="https://travis-ci.org/mitchallen/PACKAGE_NAME">
+    <img src="https://img.shields.io/travis/mitchallen/PACKAGE_NAME.svg?style=flat-square" alt="Continuous Integration">
+  </a>
+  <a href="https://codecov.io/gh/mitchallen/PACKAGE_NAME">
+    <img src="https://codecov.io/gh/mitchallen/PACKAGE_NAME/branch/master/graph/badge.svg" alt="Coverage Status">
+  </a>
+  <a href="https://npmjs.org/package/@NPM_SCOPE/PACKAGE_NAME">
+    <img src="http://img.shields.io/npm/dt/@NPM_SCOPE/PACKAGE_NAME/.svg?style=flat-square" alt="Downloads">
+  </a>
+  <a href="https://npmjs.org/package/@NPM_SCOPE/PACKAGE_NAME">
+    <img src="http://img.shields.io/npm/v/@NPM_SCOPE/PACKAGE_NAME.svg?style=flat-square" alt="Version">
+  </a>
+  <a href="https://npmjs.com/package/@NPM_SCOPE/PACKAGE_NAME">
+    <img src="https://img.shields.io/github/license/mitchallen/PACKAGE_NAME.svg" alt="License"></a>
+  </a>
+</p>
 
-You must use __npm__ __2.7.0__ or higher because of the scoped package name.
+## Installation
 
     $ npm init
     $ npm install @NPM_SCOPE/PACKAGE_NAME --save
@@ -26,7 +42,6 @@ To test, go to the root folder and type (sans __$__):
 
 * [bitbucket.org/BITBUCKET_USER/PACKAGE_NAME.git](https://bitbucket.org/BITBUCKET_USER/PACKAGE_NAME.git)
 * [github.com/GITHUB_USER/PACKAGE_NAME.git](https://github.com/GITHUB_USER/PACKAGE_NAME.git)
-* [gitlab.com/GITLAB_USER/PACKAGE_NAME](https://gitlab.com/GITLAB_USER/PACKAGE_NAME) (append __.git__ to clone)
 
 * * *
 
