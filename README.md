@@ -260,6 +260,13 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 ## Version History
 
+#### Version 0.1.12
+
+* added LICENSE file (MIT license)
+* added travis.yml /.travis.yml for travis-ci.org support
+* added badges to README.template
+* added SED variable for scope/no-scope package name
+
 #### Version 0.1.11
 
 * updated Gruntfile.js
