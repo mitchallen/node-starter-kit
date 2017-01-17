@@ -19,10 +19,12 @@ A starter kit should copy these files to the root or subfolder of a new project 
 * __kit/package.json__ - copy to the root of the project
 * __kit/index-factory.js__ - copy to modules/index.js
 * __kit/smoke-test-factory.js__ - copy to test/smoke-test.js
-* __kit/npmignore.txt__ - copy this file to the root of the project as to __.npmignore__. The file will be hidden. To see it use __ls -la__ at the command line
+* __kit/npmignore.txt__ - copy this file to the root of the project as  __.npmignore__. The file will be hidden. To see it use __ls -la__ at the command line
 * __kit/Gruntfile.js__ - copy to the root of the new project 
 * __kit/browser.js__ - copy to the root of the new project
 * __kit/example-browser.html__ - copy to examples/client-example
+* __kit/LICENSE__ - copy to the root of the project
+* __kit/travis.yml__ - copy this file to the root of the project as __.travis.yml__. The file will be hidden. To see it use __ls -la__ at the command line
 
 ### Setting Up Subfolders
 
@@ -82,6 +84,8 @@ Example script:
 	  cp $__cloneFolder/kit/npmignore.txt .npmignore
 	  cp $__cloneFolder/kit/README.template README.md
 	  cp $__cloneFolder/kit/browser.js .
+	  cp $__cloneFolder/kit/travis.yml .travis.yml
+	  cp $__cloneFolder/kit/LICENSE .
 	  cp $__cloneFolder/kit/example-browser.html examples/client-example/index.html
 
 	  # remove clone folder
@@ -118,91 +122,113 @@ Any variable that starts with a __$__ must be supplied by the script or the envi
 
     function FillTemplates {
 
-	  echo "*** $FUNCNAME"
+	echo "*** $FUNCNAME"
 
-	  # Update fields in cloned files
+	echo "."
 
-	  #  File: index.js
+	read -p "===> Is this project scoped (y/n)? " yn
+	case $yn in
+	    [Yy]* ) FULL_PKG_NAME="@$NPM_SCOPE/$packageName";;
+	    [Nn]* ) FULL_PKG_NAME="$packageName";;
+	    * ) echo "Please answer Y or N."; exit 1;;
+	esac
 
-	  DemandFile "modules/index.js"
+	echo "===> Full Pkg: $FULL_PKG_NAME"
 
-	  echo "... Updating modules/index.js"
+	# Update fields in cloned files
 
-	  sed -i .bak "s/NPM_SCOPE/$NPM_SCOPE/g" modules/index.js
-	  sed -i .bak "s/PACKAGE_NAME/$packageName/g" modules/index.js
-	  sed -i .bak "s/AUTHOR_NAME/$AUTHOR_NAME/g" modules/index.js
+	#  File: index.js
 
-	  cat modules/$packageName.js
+	DemandFile "modules/index.js"
 
-	  #  File: test/smoke-test.js
+	echo "... Updating modules/index.js"
 
-	  DemandFile "test/smoke-test.js"
+	sed -i .bak "s~FULL_PKG_NAME~$FULL_PKG_NAME~g" modules/index.js
+	sed -i .bak "s/NPM_SCOPE/$NPM_SCOPE/g" modules/index.js
+	sed -i .bak "s/PACKAGE_NAME/$packageName/g" modules/index.js
+	sed -i .bak "s/AUTHOR_NAME/$AUTHOR_NAME/g" modules/index.js
 
-	  echo "... updating test/smoke-test.js"
+	cat modules/$packageName.js
 
-	  sed -i .bak "s/NPM_SCOPE/$NPM_SCOPE/g" test/smoke-test.js
-	  sed -i .bak "s/PACKAGE_NAME/$packageName/g" test/smoke-test.js
-	  sed -i .bak "s/AUTHOR_NAME/$AUTHOR_NAME/g" test/smoke-test.js
+	#  File: test/smoke-test.js
 
-	  cat test/smoke-test.js
+	DemandFile "test/smoke-test.js"
 
-	  #  File: package.json
+	echo "... updating test/smoke-test.js"
 
-	  DemandFile "package.json"
+    sed -i .bak "s~FULL_PKG_NAME~$FULL_PKG_NAME~g" test/smoke-test.js
+	sed -i .bak "s/NPM_SCOPE/$NPM_SCOPE/g" test/smoke-test.js
+	sed -i .bak "s/PACKAGE_NAME/$packageName/g" test/smoke-test.js
+	sed -i .bak "s/AUTHOR_NAME/$AUTHOR_NAME/g" test/smoke-test.js
 
-	  echo "... Updating package.json"
+	cat test/smoke-test.js
 
-	  sed -i .bak "s/NPM_SCOPE/$NPM_SCOPE/g" package.json
-	  sed -i .bak "s/PACKAGE_NAME/$packageName/g" package.json
-	  sed -i .bak "s/BITBUCKET_USER/$BITBUCKET_USER/g" package.json
-	  sed -i .bak "s/GITHUB_USER/$GITHUB_USER/g" package.json
-	  sed -i .bak "s/GITLAB_USER/$GITLAB_USER/g" package.json
-	  sed -i .bak "s/NPM_AUTHOR/$npmAuthor/g" package.json
+	#  File: package.json
 
-	  cat package.json
+	DemandFile "package.json"
 
-	  #  File: Gruntfile.js
+	echo "... Updating package.json"
 
-	  DemandFile "Gruntfile.js"
+    sed -i .bak "s~FULL_PKG_NAME~$FULL_PKG_NAME~g" package.json
+	sed -i .bak "s/NPM_SCOPE/$NPM_SCOPE/g" package.json
+	sed -i .bak "s/PACKAGE_NAME/$packageName/g" package.json
+	sed -i .bak "s/BITBUCKET_USER/$BITBUCKET_USER/g" package.json
+	sed -i .bak "s/GITHUB_USER/$GITHUB_USER/g" package.json
+	sed -i .bak "s/GITLAB_USER/$GITLAB_USER/g" package.json
+	sed -i .bak "s/NPM_AUTHOR/$NPM_AUTHOR/g" package.json
 
-	  echo "... updating Gruntfile.js"
+	cat package.json
 
-	  sed -i .bak "s/NPM_SCOPE/$NPM_SCOPE/g" Gruntfile.js
-	  sed -i .bak "s/PACKAGE_NAME/$packageName/g" Gruntfile.js
+	#  File: Gruntfile.js
 
-	  cat Gruntfile.js
+	DemandFile "Gruntfile.js"
 
-	  #  File: README.md
+	echo "... updating Gruntfile.js"
 
-	  DemandFile "README.md"
+    sed -i .bak "s~FULL_PKG_NAME~$FULL_PKG_NAME~g" Gruntfile.js
+	sed -i .bak "s/NPM_SCOPE/$NPM_SCOPE/g" Gruntfile.js
+	sed -i .bak "s/PACKAGE_NAME/$packageName/g" Gruntfile.js
+	sed -i .bak "s/BROWSER_NAMESPACE/$BROWSER_NAMESPACE/g" Gruntfile.js
 
-	  echo "... Updating README.md"
+	cat Gruntfile.js
 
-	  sed -i .bak "s/NPM_SCOPE/$NPM_SCOPE/g" README.md
-	  sed -i .bak "s/PACKAGE_NAME/$packageName/g" README.md
-	  sed -i .bak "s/BITBUCKET_USER/$BITBUCKET_USER/g" README.md
-	  sed -i .bak "s/GITHUB_USER/$GITHUB_USER/g" README.md
-	  sed -i .bak "s/GITLAB_USER/$GITLAB_USER/g" README.md
-	  sed -i .bak "s/NPM_AUTHOR/$npmAuthor/g" README.md
+	#  File: README.md
 
-	  cat README.md
+	DemandFile "README.md"
 
-	  # Examples 
+	echo "... Updating README.md"
 
-	  DemandFile "examples/client-example/index.html"
+	sed -i .bak "s~FULL_PKG_NAME~$FULL_PKG_NAME~g" README.md
+	sed -i .bak "s/NPM_SCOPE/$NPM_SCOPE/g" README.md
+	sed -i .bak "s/PACKAGE_NAME/$packageName/g" README.md
+	sed -i .bak "s/BITBUCKET_USER/$BITBUCKET_USER/g" README.md
+	sed -i .bak "s/GITHUB_USER/$GITHUB_USER/g" README.md
+	sed -i .bak "s/GITLAB_USER/$GITLAB_USER/g" README.md
+	sed -i .bak "s/NPM_AUTHOR/$NPM_AUTHOR/g" README.md
+	sed -i .bak "s/TRAVIS_ACCT/$TRAVIS_ACCT/g" README.md
+	sed -i .bak "s/CODECOV_ACCT/$CODECOV_ACCT/g" README.md
 
-	  echo "... Updating examples/client-example/index.html"
+	cat README.md
 
-	  sed -i .bak "s/NPM_SCOPE/$NPM_SCOPE/g" examples/client-example/index.html
-	  sed -i .bak "s/PACKAGE_NAME/$packageName/g" examples/client-example/index.html
-	  sed -i .bak "s/GITHUB_USER/$GITHUB_USER/g" examples/client-example/index.html
+	# Examples 
 
-	  echo "... Removing sed backup files"
+	DemandFile "examples/client-example/index.html"
 
-	  rm *.bak
-	  rm test/*.bak
-	  rm modules/*.bak
-	  rm examples/client-example/*.bak
+	echo "... Updating examples/client-example/index.html"
+
+    sed -i .bak "s~FULL_PKG_NAME~$FULL_PKG_NAME~g" examples/client-example/index.html
+	sed -i .bak "s/NPM_SCOPE/$NPM_SCOPE/g" examples/client-example/index.html
+	sed -i .bak "s/PACKAGE_NAME/$packageName/g" examples/client-example/index.html
+	sed -i .bak "s/GITHUB_USER/$GITHUB_USER/g" examples/client-example/index.html
+	sed -i .bak "s/BROWSER_NAMESPACE/$BROWSER_NAMESPACE/g" examples/client-example/index.html
+
+	echo "... Removing sed backup files"
+
+	rm *.bak
+	rm test/*.bak
+	rm modules/*.bak
+	rm examples/client-example/*.bak
+
     }
 
 
