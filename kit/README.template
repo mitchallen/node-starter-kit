@@ -11,7 +11,7 @@ PUT DESCRIPTION HERE
     <img src="https://codecov.io/gh/CODECOV_ACCT/PACKAGE_NAME/branch/master/graph/badge.svg" alt="Coverage Status">
   </a>
   <a href="https://npmjs.org/package/FULL_PKG_NAME">
-    <img src="http://img.shields.io/npm/dt/FULL_PKG_NAME/.svg?style=flat-square" alt="Downloads">
+    <img src="http://img.shields.io/npm/dt/FULL_PKG_NAME.svg?style=flat-square" alt="Downloads">
   </a>
   <a href="https://npmjs.org/package/FULL_PKG_NAME">
     <img src="http://img.shields.io/npm/v/FULL_PKG_NAME.svg?style=flat-square" alt="Version">
