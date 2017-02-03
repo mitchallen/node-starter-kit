@@ -7,6 +7,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks('grunt-jsdoc-to-markdown');
+    grunt.loadNpmTasks('grunt-upcoming');
 
     grunt.initConfig({
 
@@ -106,14 +107,24 @@ module.exports = function (grunt) {
               //   src: 'src/wardrobe.js',
               //   dest: 'api/with-index.md'
               // }
+        },
+
+        upcoming: {
+            default: {
+                files: [
+                    { src: 'package.json', dest: ['upcoming-info.json'] }
+                ]
+            }
         }
 
     });
 
-    grunt.registerTask('default', ['build']);
+    grunt.registerTask('default', ['upcoming:patch','build']);
     grunt.registerTask('monitor', ['jshint','watch']);
     grunt.registerTask('build-doc', ['jsdoc2md']);
-    grunt.registerTask("build", ['jshint','build-doc','browserify','uglify']);
+    grunt.registerTask("build",   ['jshint','build-doc','browserify','uglify']);
     grunt.registerTask('pubinit', ['build','shell:pubinit']);
-    grunt.registerTask('publish', ['build','bump','shell:publish']);
+    grunt.registerTask('publish', ['upcoming:patch','build','bump','shell:publish']);
+    grunt.registerTask('pubminor', ['upcoming:minor','build','bump:minor','shell:publish']);
+    grunt.registerTask('pubmajor', ['upcoming:major','build','bump:major','shell:publish']);
 };
