@@ -4,6 +4,10 @@
     Author: AUTHOR_NAME
 */
 
+/*jshint node: true */
+/*jshint mocha: true */
+/*jshint esversion: 6 */
+
 "use strict";
 
 var request = require('supertest'),
@@ -39,24 +43,32 @@ describe('module factory smoke test', () => {
     it('module should exist', done => {
         should.exist(_factory);
         done();
-    })
-
-    it('create method with no spec should return null', done => {
-        var obj = _factory.create();
-        should.not.exist(obj);
-        done();
     });
 
-    it('create method with spec should return object', done => {
-        var obj = _factory.create({});
-        should.exist(obj);
-        done();
+    it('create method with no spec should return object', done => {
+        _factory.create()
+        .then(function(obj){
+            should.exist(obj);
+            done();
+        })
+        .catch( function(err) { 
+            console.error(err); 
+            done(err);  // to pass on err, remove err (done() - no arguments)
+        });
     });
 
     it('health method should return ok', done => {
-        var obj = _factory.create({});
-        should.exist(obj);
-        obj.health().should.eql("OK");
-        done();
+        _factory.create({})
+        .then(function(obj) {
+            return obj.health();
+        })
+        .then(function(result) {
+            result.should.eql("OK");
+            done();
+        })
+        .catch( function(err) { 
+            console.error(err);
+            done(err); 
+        });
     });
 });

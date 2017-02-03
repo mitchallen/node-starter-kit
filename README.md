@@ -260,6 +260,10 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 ## Version History
 
+#### Version 0.1.13
+
+* index-factory and smoke-test-factory now use Promises
+
 #### Version 0.1.12
 
 * added LICENSE file (MIT license)
