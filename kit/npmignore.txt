@@ -4,5 +4,6 @@ coverage
 example
 examples
 support
+.env
 .gitignore
 .travis.yml
